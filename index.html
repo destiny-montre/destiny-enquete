@@ -3,118 +3,377 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#080610">
 <title>DESTINY — Le dernier choix</title>
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cinzel:wght@500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 :root {
- --bg:#080610;--panel:#131020;--panel2:#1b1429;
- --purple:#a855f7;--light:#d8a5ff;--text:#f7f1ff;
- --muted:#a69bb5;--red:#ff5577;--green:#63e6a5;
+ --bg:#080610;
+ --panel:#141020;
+ --panel2:#1c152a;
+ --purple:#a855f7;
+ --light:#d8a5ff;
+ --white:#f7f1ff;
+ --muted:#a69bb5;
+ --red:#ff5478;
+ --green:#5de5a0;
 }
+
 *{box-sizing:border-box}
+
 body{
- margin:0;background:var(--bg);color:var(--text);
- font-family:Inter,sans-serif;min-height:100vh;
- background-image:radial-gradient(ellipse at 80% 0%,#57217b44,transparent 40%),
+ margin:0;
+ min-height:100vh;
+ background:var(--bg);
+ color:var(--white);
+ font-family:Inter,sans-serif;
+ background-image:
+ radial-gradient(ellipse at 80% 0%,#57217b44,transparent 40%),
  radial-gradient(ellipse at 0% 100%,#36145b33,transparent 45%);
 }
+
 header{
- height:70px;padding:0 6%;display:flex;align-items:center;
- justify-content:space-between;border-bottom:1px solid #ffffff18;
- background:#090710ed;position:sticky;top:0;z-index:10;
- backdrop-filter:blur(15px)
+ height:72px;
+ padding:0 6%;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ border-bottom:1px solid #ffffff18;
+ background:#090710ed;
+ position:sticky;
+ top:0;
+ z-index:10;
+ backdrop-filter:blur(15px);
 }
-.logo{font-family:Cinzel,serif;font-size:23px;letter-spacing:5px}
+
+.logo{
+ font-family:Cinzel,serif;
+ font-size:23px;
+ letter-spacing:5px;
+}
+
 .logo span{color:var(--purple)}
-.header-info{font-size:10px;letter-spacing:2px;color:var(--muted)}
-main{max-width:1000px;margin:auto;padding:30px 20px 80px}
+
+.header-info{
+ color:var(--muted);
+ font-size:10px;
+ letter-spacing:2px;
+}
+
+main{
+ max-width:1000px;
+ margin:auto;
+ padding:30px 20px 80px;
+}
+
 .hidden{display:none!important}
-.eyebrow{color:var(--light);font-size:10px;letter-spacing:4px;font-weight:800}
+
+.eyebrow{
+ color:var(--light);
+ font-size:10px;
+ font-weight:800;
+ letter-spacing:4px;
+}
+
 h1,h2,h3{font-family:Cinzel,serif}
-h1{font-size:clamp(38px,8vw,76px);line-height:1.08;margin:20px 0}
+
+h1{
+ font-size:clamp(40px,8vw,76px);
+ line-height:1.08;
+ margin:20px 0;
+}
+
 h1 span{color:var(--purple)}
-h2{font-size:27px;margin:12px 0}
-h3{font-size:17px}
-p{color:#c9bfd5;line-height:1.8}
+
+h2{font-size:27px}
+
+p{
+ color:#c9bfd5;
+ line-height:1.8;
+}
+
 button{
- background:var(--purple);color:white;border:1px solid var(--purple);
- padding:15px 20px;border-radius:5px;font-weight:800;
- letter-spacing:1px;cursor:pointer;font-size:12px;
- transition:.2s
+ border:1px solid var(--purple);
+ background:var(--purple);
+ color:white;
+ padding:15px 20px;
+ border-radius:5px;
+ font-weight:800;
+ letter-spacing:1px;
+ font-size:12px;
+ cursor:pointer;
+ transition:.2s;
 }
-button:hover{transform:translateY(-2px);box-shadow:0 0 25px #a855f755}
-button:disabled{opacity:.4;cursor:not-allowed;transform:none}
-.secondary{background:transparent;color:var(--light)}
-.danger{border-color:#9b344c;background:#451524}
-.hero{text-align:center;padding:65px 10px 40px}
+
+button:hover{
+ transform:translateY(-2px);
+ box-shadow:0 0 25px #a855f755;
+}
+
+button:disabled{
+ opacity:.35;
+ cursor:not-allowed;
+ transform:none;
+ box-shadow:none;
+}
+
+.secondary{
+ background:transparent;
+ color:var(--light);
+}
+
+.hero{
+ text-align:center;
+ padding:65px 10px 40px;
+}
+
 .cube{
- width:125px;height:125px;margin:35px auto;
- border:1px solid var(--purple);transform:rotate(45deg);
- display:grid;place-items:center;box-shadow:0 0 50px #a855f755;
- animation:glow 3s infinite
+ width:125px;
+ height:125px;
+ margin:35px auto;
+ border:1px solid var(--purple);
+ transform:rotate(45deg);
+ display:grid;
+ place-items:center;
+ box-shadow:0 0 50px #a855f755;
+ animation:glow 3s infinite;
 }
-.cube span{transform:rotate(-45deg);font-family:Cinzel;font-size:42px;color:var(--light)}
-@keyframes glow{50%{box-shadow:0 0 75px #a855f799}}
+
+.cube span{
+ transform:rotate(-45deg);
+ font-family:Cinzel,serif;
+ font-size:42px;
+ color:var(--light);
+}
+
+@keyframes glow{
+ 50%{box-shadow:0 0 75px #a855f799}
+}
+
+.badge{
+ display:inline-block;
+ border:1px solid var(--purple);
+ padding:7px 12px;
+ color:var(--light);
+ font-size:10px;
+ letter-spacing:2px;
+}
+
 .panel{
  background:linear-gradient(145deg,#191427,#0e0b17);
- border:1px solid #382849;border-radius:10px;padding:25px;
- margin:18px 0;box-shadow:0 15px 50px #0005
+ border:1px solid #382849;
+ border-radius:10px;
+ padding:25px;
+ margin:18px 0;
+ box-shadow:0 15px 50px #0005;
 }
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
-.stat{background:#171222;border:1px solid #342442;padding:15px;border-radius:7px}
-.stat small{color:var(--muted);font-size:10px;letter-spacing:1px}
-.stat strong{display:block;font-size:25px;margin-top:8px}
-.purple{color:var(--light)}.red{color:var(--red)}.green{color:var(--green)}
-.progress{height:5px;background:#292133;border-radius:8px;overflow:hidden;margin:12px 0}
-.progress div{height:100%;background:var(--purple);transition:.4s}
-.topline{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}
-.map{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px}
+
+.topline{
+ display:flex;
+ justify-content:space-between;
+ color:var(--muted);
+ font-size:11px;
+}
+
+.progress{
+ height:5px;
+ background:#292133;
+ border-radius:8px;
+ overflow:hidden;
+ margin:12px 0;
+}
+
+.progress div{
+ height:100%;
+ background:var(--purple);
+ width:0;
+ transition:.4s;
+}
+
+.stats{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:12px;
+ margin:20px 0;
+}
+
+.stat{
+ background:#171222;
+ border:1px solid #342442;
+ padding:15px;
+ border-radius:7px;
+}
+
+.stat small{
+ color:var(--muted);
+ font-size:10px;
+ letter-spacing:1px;
+}
+
+.stat strong{
+ display:block;
+ font-size:25px;
+ margin-top:8px;
+}
+
+.purple{color:var(--light)}
+.red{color:var(--red)}
+.green{color:var(--green)}
+
+.map{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:12px;
+ margin-top:20px;
+}
+
 .place{
- border:1px solid #42304f;background:#171222;padding:17px;
- border-radius:8px;cursor:pointer;text-align:left;color:white
+ width:100%;
+ min-height:120px;
+ text-align:left;
+ background:#171222;
+ border:1px solid #42304f;
+ padding:17px;
+ border-radius:8px;
+ color:white;
+ cursor:pointer;
 }
-.place:hover{border-color:var(--purple)}
-.place small{display:block;color:var(--muted);margin-top:8px}
-.place.locked{opacity:.35;cursor:not-allowed}
-.place.done{border-color:var(--green)}
-.place .number{font-size:10px;color:var(--light);letter-spacing:2px}
+
+.place:hover:not(:disabled){
+ border-color:var(--purple);
+}
+
+.place small{
+ display:block;
+ color:var(--muted);
+ margin-top:8px;
+ line-height:1.5;
+}
+
+.place .number{
+ color:var(--light);
+ font-size:10px;
+ letter-spacing:2px;
+}
+
+.place.done{
+ border-color:var(--green);
+ background:#10251d;
+}
+
+.place.locked{
+ opacity:.35;
+}
+
 .story{
- background:#0b0911;border-left:3px solid var(--purple);
- padding:18px;white-space:pre-line;line-height:1.85;
- color:#cfc4dc;margin:20px 0;font-size:14px
+ background:#0b0911;
+ border-left:3px solid var(--purple);
+ padding:18px;
+ white-space:pre-line;
+ line-height:1.85;
+ color:#cfc4dc;
+ margin:20px 0;
+ font-size:14px;
 }
-.question{font-size:18px;line-height:1.6;font-weight:700;margin:22px 0}
+
+.question{
+ font-size:18px;
+ line-height:1.6;
+ font-weight:700;
+ margin:22px 0;
+}
+
 input{
- width:100%;padding:16px;background:#090711;border:1px solid #514064;
- border-radius:5px;color:white;font-size:16px;margin:12px 0;
- outline:none
+ width:100%;
+ padding:16px;
+ background:#090711;
+ border:1px solid #514064;
+ border-radius:5px;
+ color:white;
+ font-size:16px;
+ margin:12px 0;
+ outline:none;
 }
+
 input:focus{border-color:var(--purple)}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-.choice{
- display:block;width:100%;text-align:left;background:#171222;
- border:1px solid #40304e;padding:18px;margin:12px 0;
- border-radius:7px;color:white;letter-spacing:0
+
+.actions{
+ display:flex;
+ gap:10px;
+ flex-wrap:wrap;
+ margin-top:12px;
 }
-.choice strong{display:block;margin-bottom:7px}
-.choice small{color:var(--muted);line-height:1.6}
+
+.choice{
+ display:block;
+ width:100%;
+ text-align:left;
+ background:#171222;
+ border:1px solid #40304e;
+ padding:18px;
+ margin:12px 0;
+ border-radius:7px;
+ color:white;
+ letter-spacing:0;
+}
+
+.choice strong{
+ display:block;
+ margin-bottom:7px;
+}
+
+.choice small{
+ color:var(--muted);
+ line-height:1.7;
+}
+
 .choice:hover{border-color:var(--purple)}
-.feedback{min-height:25px;font-weight:700;margin-top:15px;font-size:13px}
-.hint{background:#281936;border-left:3px solid var(--purple);padding:15px;color:var(--light);font-size:13px;line-height:1.7;margin:15px 0}
-.badge{border:1px solid var(--purple);padding:7px 10px;color:var(--light);font-size:10px;letter-spacing:2px;display:inline-block}
+
+.feedback{
+ min-height:25px;
+ font-weight:700;
+ margin-top:15px;
+ font-size:13px;
+ line-height:1.7;
+}
+
+.hint{
+ background:#281936;
+ border-left:3px solid var(--purple);
+ padding:15px;
+ color:var(--light);
+ font-size:13px;
+ line-height:1.7;
+ margin:15px 0;
+}
+
 .center{text-align:center}
-footer{text-align:center;color:#71677e;font-size:10px;letter-spacing:3px;padding:25px}
+
+footer{
+ text-align:center;
+ color:#71677e;
+ font-size:10px;
+ letter-spacing:3px;
+ padding:25px;
+}
+
 @media(max-width:600px){
- header{padding:0 15px}.logo{font-size:19px}.header-info{font-size:8px}
- main{padding:20px 13px 60px}.panel{padding:19px}
- .stats{gap:6px}.stat{padding:10px}.stat strong{font-size:20px}
+ header{padding:0 15px}
+ .logo{font-size:19px}
+ .header-info{font-size:8px}
+ main{padding:20px 13px 60px}
+ .panel{padding:19px}
+ .stats{gap:6px}
+ .stat{padding:10px}
+ .stat strong{font-size:20px}
  .map{grid-template-columns:1fr}
 }
 </style>
 </head>
+
 <body>
 
 <header>
@@ -124,114 +383,254 @@ footer{text-align:center;color:#71677e;font-size:10px;letter-spacing:3px;padding
 
 <main>
 
-<!-- INTRO -->
+<!-- PAGE D'ACCUEIL -->
+
 <section id="intro" class="hero">
+
  <div class="eyebrow">TRANSMISSION PRIVÉE — PARIS</div>
+
  <div class="cube"><span>D</span></div>
+
  <div class="badge">DOSSIER CONFIDENTIEL 001</div>
+
  <h1>LE DERNIER<br><span>CHOIX.</span></h1>
- <p>Une montre DESTINY a disparu quelques heures avant le grand événement de Paris.</p>
- <p>Quelqu'un connaît son emplacement. Quelqu'un sait pourquoi elle a disparu. Et quelqu'un t'observe depuis le début.</p>
+
+ <p>
+ Une montre DESTINY a disparu quelques heures avant
+ le grand événement organisé à Paris.
+ </p>
+
+ <p>
+ Quelqu'un connaît son emplacement.
+ Quelqu'un sait pourquoi elle a disparu.
+ Et quelqu'un t'observe depuis le début.
+ </p>
+
  <p><b>Tu as été choisi pour la retrouver.</b></p>
- <p style="font-size:11px;letter-spacing:2px">5 LIEUX • 5 ÉNIGMES • DES CONSÉQUENCES IRRÉVERSIBLES</p>
+
+ <p style="font-size:11px;letter-spacing:2px">
+ 5 LIEUX • 5 ÉNIGMES • DES CONSÉQUENCES
+ </p>
+
  <button onclick="newGame()">OUVRIR LE DOSSIER →</button>
- <p style="font-size:10px">Tes décisions auront un impact sur toute l'enquête.</p>
- <button class="secondary" id="resume" onclick="resumeGame()" style="display:none">REPRENDRE MON ENQUÊTE</button>
+
+ <br><br>
+
+ <button class="secondary hidden" id="resume" onclick="resumeGame()">
+ REPRENDRE MON ENQUÊTE
+ </button>
+
 </section>
 
-<!-- GAME -->
+
+<!-- JEU -->
+
 <section id="game" class="hidden">
- <div class="topline"><span>DOSSIER PARIS</span><span id="chapter">CHAPITRE 01</span></div>
- <div class="progress"><div id="bar" style="width:0%"></div></div>
+
+ <div class="topline">
+  <span>DOSSIER PARIS</span>
+  <span id="chapter">CHAPITRE 01</span>
+ </div>
+
+ <div class="progress">
+  <div id="bar"></div>
+ </div>
 
  <div class="stats">
-  <div class="stat"><small>TEMPS RESTANT</small><strong id="time" class="purple">100</strong></div>
-  <div class="stat"><small>CONFIANCE</small><strong id="trust" class="green">50</strong></div>
-  <div class="stat"><small>INDICES</small><strong id="clues" class="purple">0</strong></div>
+
+  <div class="stat">
+   <small>TEMPS RESTANT</small>
+   <strong id="time" class="purple">100</strong>
+  </div>
+
+  <div class="stat">
+   <small>CONFIANCE</small>
+   <strong id="trust" class="green">50</strong>
+  </div>
+
+  <div class="stat">
+   <small>INDICES</small>
+   <strong id="clues" class="purple">0</strong>
+  </div>
+
  </div>
+
+
+ <!-- CARTE -->
 
  <div id="mapPanel" class="panel">
+
   <div class="eyebrow">CARTE DE L'ENQUÊTE</div>
+
   <h2>Paris est ton terrain.</h2>
-  <p>Chaque lieu contient une partie du mystère. Certains indices ne seront accessibles qu'en fonction de tes décisions.</p>
+
+  <p>
+   Chaque lieu contient une partie du mystère.
+   Résous les énigmes pour débloquer les prochaines destinations.
+  </p>
+
   <div class="map" id="map"></div>
+
  </div>
 
+
+ <!-- DOSSIER -->
+
  <div id="mission" class="panel hidden">
-  <div class="eyebrow" id="missionLabel">LIEU 01</div>
+
+  <div class="eyebrow" id="missionLabel"></div>
+
   <h2 id="missionTitle"></h2>
+
   <div class="story" id="story"></div>
+
   <div class="question" id="question"></div>
+
   <div id="decisionArea"></div>
+
   <div id="inputArea">
-   <input id="answer" placeholder="Entre ta réponse..." autocomplete="off">
+
+   <input
+    id="answer"
+    type="text"
+    placeholder="Entre ta réponse..."
+    autocomplete="off"
+   >
+
    <div class="actions">
-    <button onclick="validate()">VALIDER</button>
-    <button class="secondary" onclick="hint()">DEMANDER UN INDICE</button>
+
+    <button id="validateBtn" onclick="validate()">
+     VALIDER
+    </button>
+
+    <button class="secondary" onclick="hint()">
+     DEMANDER UN INDICE
+    </button>
+
    </div>
+
   </div>
+
   <div id="hintBox" class="hint hidden"></div>
+
   <div id="feedback" class="feedback"></div>
+
   <div id="continue" class="hidden">
    <button onclick="finishMission()">CONTINUER →</button>
   </div>
-  <button class="secondary" onclick="backToMap()" style="margin-top:15px">← RETOUR À LA CARTE</button>
+
+  <button class="secondary" onclick="backToMap()" style="margin-top:15px">
+   ← RETOUR À LA CARTE
+  </button>
+
  </div>
+
 </section>
 
-<!-- END -->
+
+<!-- FIN -->
+
 <section id="ending" class="hero hidden">
+
  <div class="eyebrow">FIN DE L'INVESTIGATION</div>
+
  <div class="cube"><span>D</span></div>
- <h1 id="endTitle">DESTINY<br><span>RÉVÉLÉ.</span></h1>
+
+ <h1>DESTINY<br><span>RÉVÉLÉ.</span></h1>
+
  <div class="panel">
+
   <h2 id="endSubtitle"></h2>
+
   <p id="endStory"></p>
+
   <div class="stats">
-   <div class="stat"><small>TEMPS</small><strong id="endTime">0</strong></div>
-   <div class="stat"><small>CONFIANCE</small><strong id="endTrust">0</strong></div>
-   <div class="stat"><small>INDICES</small><strong id="endClues">0</strong></div>
+
+   <div class="stat">
+    <small>TEMPS</small>
+    <strong id="endTime">0</strong>
+   </div>
+
+   <div class="stat">
+    <small>CONFIANCE</small>
+    <strong id="endTrust">0</strong>
+   </div>
+
+   <div class="stat">
+    <small>INDICES</small>
+    <strong id="endClues">0</strong>
+   </div>
+
   </div>
+
  </div>
+
  <button onclick="resetGame()">RECOMMENCER</button>
+
 </section>
 
 </main>
-<footer>DESTINY™ — CONTROL YOUR DESTINY — PARIS</footer>
+
+<footer>
+ DESTINY™ — CONTROL YOUR DESTINY — PARIS
+</footer>
+
 
 <script>
+
+/* =========================
+   DONNÉES DU JEU
+========================= */
+
 const locations = [
- {name:"LE MÉTRO",sub:"La première transmission",icon:"01"},
- {name:"LE LOUVRE",sub:"Le témoin silencieux",icon:"02"},
- {name:"LES CHAMPS-ÉLYSÉES",sub:"La piste du temps",icon:"03"},
- {name:"LA TOUR EIFFEL",sub:"Le message caché",icon:"04"},
- {name:"LE BLOC",sub:"La dernière vérité",icon:"05"}
+ {name:"LE MÉTRO",sub:"La première transmission"},
+ {name:"LE LOUVRE",sub:"Le témoin silencieux"},
+ {name:"LES CHAMPS-ÉLYSÉES",sub:"La piste du temps"},
+ {name:"LA TOUR EIFFEL",sub:"Le message caché"},
+ {name:"LE BLOC",sub:"La dernière vérité"}
 ];
 
 const missions = [
- {
+
+{
  title:"LE SIGNAL FANTÔME",
+
  story:`20H14 — MÉTRO PARISIEN
 
 Ton téléphone vibre. Un message apparaît :
 
-« La montre n'a pas été volée au hasard. Elle a été cachée pour une raison. Si tu veux la retrouver, commence là où les chemins se croisent. »
+« La montre n'a pas été volée au hasard. Elle a été cachée pour une raison.
 
-Une photographie montre un plan du métro. Trois stations sont entourées : République, Bastille et Châtelet.
+Si tu veux la retrouver, commence là où les chemins se croisent. »
+
+Une photographie montre un plan du métro.
+Trois stations sont entourées : République, Bastille et Châtelet.
 
 Au dos de la photo, une phrase :
+
 « Je suis un point de rencontre, un endroit où les lignes se rejoignent. »`,
+
  question:"Quelle station correspond à cet indice ?",
- answer:["CHATELET","CHÂTELET"],
- hints:["La station est connue pour ses nombreuses correspondances.","C'est l'une des grandes stations centrales du métro parisien."],
+
+ answer:["CHATELET"],
+
+ hints:[
+  "La station est connue pour ses nombreuses correspondances.",
+  "C'est une grande station centrale du métro parisien."
+ ],
+
  reward:"Tu trouves un ticket portant le numéro 2417. Il mentionne un rendez-vous au Louvre.",
+
  success:"Bonne réponse. Tu as retrouvé le premier message."
- },
- {
+},
+
+{
  title:"LE TÉMOIN SILENCIEUX",
+
  story:`20H32 — LE LOUVRE
 
-Un homme t'attend près de la pyramide. Il prétend avoir vu la personne qui transportait la montre.
+Un homme t'attend près de la pyramide.
+Il prétend avoir vu la personne qui transportait la montre.
 
 Il accepte de te donner son témoignage, mais il veut savoir si tu es digne de confiance.
 
@@ -240,18 +639,36 @@ Il te montre deux messages :
 « Je peux te donner l'emplacement immédiatement. Mais il faudra me croire. »
 
 « Ou tu peux vérifier mes informations, mais tu risques de perdre du temps. »`,
+
  question:"Que décides-tu ?",
+
  decision:[
-  {title:"FAIRE CONFIANCE",desc:"Tu acceptes son information sans vérifier. Tu gagnes du temps, mais tu prends un risque.",effect:"Tu gagnes 10 points de temps, mais tu perds 10 points de confiance.",time:10,trust:-10,clue:"L'homme te donne un mot : MINUIT."},
-  {title:"VÉRIFIER LE TÉMOIGNAGE",desc:"Tu prends le temps de vérifier les détails. Tu risques de perdre une occasion.",effect:"Tu perds 10 points de temps, mais tu gagnes 15 points de confiance.",time:-10,trust:15,clue:"Tu découvres que le témoin a déjà menti une fois."}
+  {
+   title:"FAIRE CONFIANCE",
+   desc:"Tu acceptes son information sans vérifier. Tu gagnes du temps, mais tu prends un risque.",
+   effect:"Tu gagnes 10 points de temps, mais tu perds 10 points de confiance.",
+   time:10,
+   trust:-10,
+   clue:"L'homme te donne un mot : MINUIT."
+  },
+  {
+   title:"VÉRIFIER LE TÉMOIGNAGE",
+   desc:"Tu vérifies ses informations. Tu perds du temps, mais tu gagnes sa confiance.",
+   effect:"Tu perds 10 points de temps, mais tu gagnes 15 points de confiance.",
+   time:-10,
+   trust:15,
+   clue:"Tu découvres que le témoin a déjà menti une fois."
+  }
  ],
- answer:["MINUIT","00H00","0H00"],
- hints:["Le témoin donne une information importante.","C'est l'heure indiquée sur le document."],
- reward:"Un reçu est retrouvé. Il indique un rendez-vous à minuit.",
- success:"Tu as compris l'information du témoin."
- },
- {
+
+ reward:"Tu obtiens un reçu indiquant un rendez-vous à minuit.",
+
+ success:"Ta décision a été enregistrée."
+},
+
+{
  title:"LA PISTE DU TEMPS",
+
  story:`21H03 — CHAMPS-ÉLYSÉES
 
 Tu trouves un message sur un téléphone abandonné :
@@ -259,22 +676,34 @@ Tu trouves un message sur un téléphone abandonné :
 « Je suis toujours en mouvement, mais personne ne peut me rattraper. Je transforme chaque seconde en souvenir. »
 
 Trois photographies accompagnent le message :
-- Une horloge à 23h45.
-- Une horloge à 00h00.
-- Une horloge à 00h15.
+
+Une horloge à 23H45.
+Une horloge à 00H00.
+Une horloge à 00H15.
 
 Le témoin a indiqué que le rendez-vous se déroulait à minuit.
 
 Mais une autre note précise :
-« Le bon moment est celui qui vient juste après le début d'un nouveau jour. »`,
+
+« Le bon moment est celui qui vient quinze minutes après le début d'un nouveau jour. »`,
+
  question:"Quelle heure faut-il retenir ?",
- answer:["00H15","0015","0H15","15"],
- hints:["Il faut dépasser minuit.","Le rendez-vous a lieu quinze minutes après le changement de jour."],
+
+ answer:["00H15","0015","0H15"],
+
+ hints:[
+  "Il faut dépasser minuit.",
+  "Le rendez-vous a lieu quinze minutes après le changement de jour."
+ ],
+
  reward:"Tu récupères un fragment de code : 15.",
+
  success:"Tu as retrouvé le bon horaire."
- },
- {
+},
+
+{
  title:"LE MESSAGE CACHÉ",
+
  story:`23H15 — TOUR EIFFEL
 
 Tu reçois une dernière transmission.
@@ -282,24 +711,38 @@ Tu reçois une dernière transmission.
 « La montre est proche. Mais tu dois comprendre pourquoi elle a été cachée. »
 
 Sur un mur, une inscription :
+
 D E S T I N Y
 
 Sous chaque lettre, un chiffre :
+
 4 - 5 - 19 - 20 - 9 - 14 - 25
 
 Un message précise :
+
 « A vaut 1, B vaut 2, C vaut 3... »
 
 Une seconde inscription apparaît :
+
 « Le temps est la clé. Le nombre est la porte. »`,
+
  question:"Quel nombre obtiens-tu en additionnant les valeurs des lettres de DESTINY ?",
+
  answer:["96"],
- hints:["Additionne les sept nombres : 4 + 5 + 19 + 20 + 9 + 14 + 25.","Le total est inférieur à 100."],
+
+ hints:[
+  "Additionne les sept nombres.",
+  "4 + 5 + 19 + 20 + 9 + 14 + 25."
+ ],
+
  reward:"Le nombre 96 ouvre le dernier dossier.",
+
  success:"Le code est exact. Le dernier dossier est accessible."
- },
- {
+},
+
+{
  title:"LA DERNIÈRE VÉRITÉ",
+
  story:`00H01 — LE BLOC, PARIS
 
 Tu arrives devant le cube DESTINY.
@@ -314,226 +757,592 @@ Elle n'a pas été cachée pour empêcher quelqu'un de la trouver.
 
 Elle a été cachée pour tester jusqu'où quelqu'un était prêt à aller pour la retrouver.
 
-Le dernier code est constitué du numéro du ticket, du fragment de temps et du nombre trouvé dans le message. »
+Le dernier code est constitué du numéro du ticket, du fragment de temps et du nombre trouvé dans le message. »`,
 
-Le cube attend ton dernier code.`,
- question:"Entre le numéro du ticket, le fragment de temps et le nombre final, quel est le code complet ?",
- answer:["24171596","2417-15-96","2417 15 96"],
- hints:["Le ticket indiquait 2417.","Assemble les trois nombres dans l'ordre : ticket, temps, somme de DESTINY."],
+ question:"Quel est le code final à six chiffres ?",
+
+ answer:["24171596"],
+
+ hints:[
+  "Le ticket indiquait 2417.",
+  "Le fragment de temps est 15.",
+  "Le nombre final est 96. Assemble les trois éléments."
+ ],
+
  reward:"Le cube s'ouvre. La montre DESTINY apparaît.",
- success:"Tu as résolu toute l'enquête. Le secret de la montre est révélé."
- }
+
+ success:"Tu as résolu toute l'enquête."
+}
+
 ];
 
+
+/* =========================
+   SAUVEGARDE
+========================= */
+
 let state = {
- completed:[],time:100,trust:50,clues:0,
- branch:"",hints:{},attempts:{},finished:false
+ completed:[],
+ time:100,
+ trust:50,
+ clues:0,
+ branch:"",
+ hints:{},
+ attempts:{},
+ finished:false
 };
+
 let active=-1;
 let pending=false;
-let selected=-1;
 
-const $=id=>document.getElementById(id);
-const clamp=(v,min,max)=>Math.max(min,Math.min(max,v));
+const $ = id => document.getElementById(id);
 
 function save(){
- localStorage.setItem("destiny_paris_game",JSON.stringify(state));
+ localStorage.setItem(
+  "destiny_paris_game",
+  JSON.stringify(state)
+ );
 }
 
 function load(){
  try{
-  const s=JSON.parse(localStorage.getItem("destiny_paris_game"));
-  if(s && Array.isArray(s.completed)) state={...state,...s};
- }catch(e){}
-}
+  const s=JSON.parse(
+   localStorage.getItem("destiny_paris_game")
+  );
 
-function newGame(){
- if(state.completed.length && !state.finished){
-  if(!confirm("Une enquête est déjà commencée. Recommencer ?"))return;
+  if(s && Array.isArray(s.completed)){
+   state={...state,...s};
+  }
+ }catch(e){
+  localStorage.removeItem("destiny_paris_game");
  }
- state={completed:[],time:100,trust:50,clues:0,branch:"",hints:{},attempts:{},finished:false};
- save();show("game");drawMap();updateStats();
 }
 
-function resumeGame(){
- show("game");drawMap();updateStats();
+function clamp(v,min,max){
+ return Math.max(min,Math.min(max,v));
 }
+
+
+/* =========================
+   NAVIGATION
+========================= */
 
 function show(id){
- ["intro","game","ending"].forEach(x=>$(x).classList.add("hidden"));
+ ["intro","game","ending"].forEach(x=>{
+  $(x).classList.add("hidden");
+ });
+
  $(id).classList.remove("hidden");
 }
 
-function drawMap(){
- $("mapPanel").classList.remove("hidden");
- $("mission").classList.add("hidden");
- $("map").innerHTML="";
- locations.forEach((loc,i)=>{
-  const done=state.completed.includes(i);
-  const unlocked=i===0 || state.completed.includes(i-1);
-  const b=document.createElement("button");
-  b.className="place"+(done?" done":"")+(unlocked?"":" locked");
-  b.innerHTML=`<span class="number">DOSSIER ${loc.icon}</span><h3>${loc.name}</h3><small>${done?"✓ INDICE RÉCUPÉRÉ":unlocked?loc.sub:"DOSSIER VERROUILLÉ"}</small>`;
-  b.disabled=!unlocked||done;
-  b.onclick=()=>openMission(i);
-  $("map").appendChild(b);
- });
- $("bar").style.width=(state.completed.length/5*100)+"%";
- $("chapter").textContent="CHAPITRE "+String(state.completed.length+1).padStart(2,"0");
- if(state.completed.length===5)endGame();
-}
+function newGame(){
 
-function updateStats(){
- $("time").textContent=state.time;
- $("trust").textContent=state.trust;
- $("clues").textContent=state.clues;
- $("trust").className=state.trust<25?"red":"green";
- $("time").className=state.time<25?"red":"purple";
- $("clues").className="purple";
- $("bar").style.width=(state.completed.length/5*100)+"%";
-}
-
-function openMission(i){
- active=i;pending=false;selected=-1;
- const m=missions[i];
- $("mapPanel").classList.add("hidden");
- $("mission").classList.remove("hidden");
- $("missionLabel").textContent="LIEU "+String(i+1).padStart(2,"0)+" / PARIS";
- $("missionTitle").textContent=m.title;
- $("story").textContent=m.story;
- $("question").textContent=m.question;
- $("feedback").textContent="";
- $("feedback").className="feedback";
- $("hintBox").classList.add("hidden");
- $("continue").classList.add("hidden");
- $("inputArea").classList.remove("hidden");
- $("answer").value="";
- $("answer").disabled=false;
- $("decisionArea").innerHTML="";
-
- if(m.decision){
-  $("inputArea").classList.add("hidden");
-  m.decision.forEach((d,j)=>{
-   const b=document.createElement("button");
-   b.className="choice";
-   b.innerHTML=`<strong>${d.title}</strong><small>${d.desc}</small>`;
-   b.onclick=()=>selectDecision(j);
-   $("decisionArea").appendChild(b);
-  });
- }else{
-  $("decisionArea").innerHTML="";
+ if(state.completed.length>0 && !state.finished){
+  if(!confirm("Recommencer l'enquête ?")){
+   return;
+  }
  }
-}
 
-function selectDecision(j){
- if(pending)return;
- const d=missions[active].decision[j];
- selected=j;pending=true;
- state.time=clamp(state.time+d.time,0,100);
- state.trust=clamp(state.trust+d.trust,0,100);
- state.branch=j===0?"trust":"verify";
- state.clues++;
- $("decisionArea").innerHTML=`
- <div class="hint"><b>CONSÉQUENCE DE TON CHOIX</b><br>${d.effect}<br><br>${d.clue}</div>`;
- $("feedback").className="feedback purple";
- $("feedback").textContent="Décision enregistrée. Tu ne peux plus revenir en arrière.";
- $("continue").classList.remove("hidden");
- save();updateStats();
-}
+ state={
+  completed:[],
+  time:100,
+  trust:50,
+  clues:0,
+  branch:"",
+  hints:{},
+  attempts:{},
+  finished:false
+ };
 
-function normalize(s){
- return s.toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"")
- .replace(/[^A-Z0-9]/g,"");
-}
-
-function validate(){
- if(pending)return;
- const m=missions[active];
- const v=normalize($("answer").value);
- if(!v){$("feedback").textContent="Entre une réponse.";return;}
- state.attempts[active]=(state.attempts[active]||0)+1;
- const correct=m.answer.some(a=>normalize(a)===v);
- if(correct){
-  pending=true;
-  state.completed.push(active);
-  state.clues++;
-  $("feedback").className="feedback green";
-  $("feedback").textContent="✓ "+m.success;
-  $("answer").disabled=true;
-  $("inputArea").classList.add("hidden");
-  $("continue").classList.remove("hidden");
-  $("story").textContent+="\n\n"+m.reward;
-  save();updateStats();
- }else{
-  state.time=clamp(state.time-5,0,100);
-  state.trust=clamp(state.trust-3,0,100);
-  $("feedback").className="feedback red";
-  $("feedback").textContent="✕ Mauvaise réponse. Tu perds 5 points de temps et 3 de confiance.";
-  save();updateStats();
- }
-}
-
-function hint(){
- const m=missions[active];
- const n=state.hints[active]||0;
- if(n>=m.hints.length){
-  $("hintBox").classList.remove("hidden");
-  $("hintBox").textContent="Tu as déjà utilisé tous les indices disponibles.";
-  return;
- }
- state.hints[active]=n+1;
- state.time=clamp(state.time-8,0,100);
- $("hintBox").classList.remove("hidden");
- $("hintBox").textContent="INDICE "+(n+1)+" : "+m.hints[n];
- $("feedback").textContent="Un indice t'a coûté 8 points de temps.";
- save();updateStats();
-}
-
-function finishMission(){
- if(active===4){endGame();return;}
+ save();
+ show("game");
+ updateStats();
  drawMap();
 }
 
-function backToMap(){
- if(pending){drawMap();return;}
- if(confirm("Quitter ce lieu ? Ta progression reste sauvegardée."))drawMap();
-}
-
-function endGame(){
- state.finished=true;save();show("ending");
- $("endSubtitle").textContent=state.trust>=50?"TU AS SU GARDER LA CONFIANCE.":"TU AS ATTEINT LA VÉRITÉ, MAIS À QUEL PRIX ?";
- $("endStory").textContent=
- "La montre DESTINY n'a jamais été un simple objet à retrouver. Elle symbolise toutes les décisions que tu as prises durant ton parcours. Tu as découvert le message : personne ne peut prévoir toutes les conséquences de ses actes. Mais chacun peut décider d'avancer.";
- $("endTime").textContent=state.time;
- $("endTrust").textContent=state.trust;
- $("endClues").textContent=state.clues;
- if(state.time===0){
-  $("endSubtitle").textContent="LA VÉRITÉ A UN PRIX.";
- }
+function resumeGame(){
+ show("game");
+ updateStats();
+ drawMap();
 }
 
 function resetGame(){
  localStorage.removeItem("destiny_paris_game");
- state={completed:[],time:100,trust:50,clues:0,branch:"",hints:{},attempts:{},finished:false};
+
+ state={
+  completed:[],
+  time:100,
+  trust:50,
+  clues:0,
+  branch:"",
+  hints:{},
+  attempts:{},
+  finished:false
+ };
+
+ $("resume").classList.add("hidden");
  show("intro");
- $("resume").style.display="none";
 }
 
-load();
-if(state.completed.length && !state.finished){
- $("resume").style.display="inline-block";
+
+/* =========================
+   CARTE ET DOSSIERS
+========================= */
+
+function drawMap(){
+
+ $("mapPanel").classList.remove("hidden");
+ $("mission").classList.add("hidden");
+
+ const map=$("map");
+ map.innerHTML="";
+
+ locations.forEach((loc,i)=>{
+
+  const done=state.completed.includes(i);
+
+  const unlocked=
+   i===0 || state.completed.includes(i-1);
+
+  const button=document.createElement("button");
+
+  button.type="button";
+
+  button.className=
+   "place"+
+   (done?" done":"")+
+   (unlocked?"":" locked");
+
+  let status="DOSSIER VERROUILLÉ";
+
+  if(done) status="✓ DOSSIER TERMINÉ";
+  else if(unlocked) status="DOSSIER DISPONIBLE";
+
+  button.innerHTML=`
+   <span class="number">DOSSIER 0${i+1}</span>
+   <h3>${loc.name}</h3>
+   <small>${status}<br>${loc.sub}</small>
+  `;
+
+  button.disabled=!unlocked || done;
+
+  if(unlocked && !done){
+   button.addEventListener("click",function(){
+    openMission(i);
+   });
+  }
+
+  map.appendChild(button);
+
+ });
+
+ $("bar").style.width=
+  (state.completed.length/5*100)+"%";
+
+ $("chapter").textContent=
+  "CHAPITRE "+String(state.completed.length+1).padStart(2,"0");
+
+ if(state.completed.length===5){
+  endGame();
+ }
 }
-if(state.finished){
+
+
+/* =========================
+   OUVERTURE DES DOSSIERS
+========================= */
+
+function openMission(i){
+
+ if(i<0 || i>=missions.length)return;
+
+ const unlocked=
+  i===0 || state.completed.includes(i-1);
+
+ if(!unlocked){
+  alert("Ce dossier est encore verrouillé.");
+  return;
+ }
+
+ if(state.completed.includes(i)){
+  alert("Ce dossier est déjà terminé.");
+  return;
+ }
+
+ active=i;
+ pending=false;
+
+ const m=missions[i];
+
+ $("mapPanel").classList.add("hidden");
+ $("mission").classList.remove("hidden");
+
+ $("missionLabel").textContent=
+  "DOSSIER 0"+(i+1)+" — PARIS";
+
+ $("missionTitle").textContent=m.title;
+ $("story").textContent=m.story;
+ $("question").textContent=m.question;
+
+ $("feedback").textContent="";
+ $("feedback").className="feedback";
+
+ $("hintBox").classList.add("hidden");
+ $("continue").classList.add("hidden");
+
+ $("inputArea").classList.remove("hidden");
+
+ $("answer").value="";
+ $("answer").disabled=false;
+
+ $("decisionArea").innerHTML="";
+
+ if(m.decision){
+
+  $("inputArea").classList.add("hidden");
+
+  m.decision.forEach((d,j)=>{
+
+   const button=document.createElement("button");
+
+   button.type="button";
+   button.className="choice";
+
+   button.innerHTML=`
+    <strong>${d.title}</strong>
+    <small>${d.desc}</small>
+   `;
+
+   button.addEventListener("click",()=>{
+    selectDecision(j);
+   });
+
+   $("decisionArea").appendChild(button);
+
+  });
+
+ }
+
+}
+
+
+/* =========================
+   DÉCISIONS
+========================= */
+
+function selectDecision(j){
+
+ if(pending || active!==1)return;
+
+ const d=missions[active].decision[j];
+
+ pending=true;
+
+ state.time=clamp(state.time+d.time,0,100);
+ state.trust=clamp(state.trust+d.trust,0,100);
+
+ state.branch=j===0?"trust":"verify";
+
+ state.clues++;
+
+ completeCurrentMission();
+
+ $("decisionArea").innerHTML=`
+  <div class="hint">
+   <b>CONSÉQUENCE DE TON CHOIX</b><br><br>
+   ${d.effect}<br><br>
+   ${d.clue}
+  </div>
+ `;
+
+ $("feedback").className="feedback purple";
+ $("feedback").textContent=
+  "Décision enregistrée. Tu ne peux plus revenir en arrière.";
+
+ $("continue").classList.remove("hidden");
+
+ $("story").textContent+="\n\n"+missions[active].reward;
+
+ save();
+ updateStats();
+}
+
+
+/* =========================
+   RÉPONSES AUX ÉNIGMES
+========================= */
+
+function normalize(s){
+
+ return s
+  .toUpperCase()
+  .normalize("NFD")
+  .replace(/[\u0300-\u036f]/g,"")
+  .replace(/[^A-Z0-9]/g,"")
+  .trim();
+
+}
+
+function validate(){
+
+ if(pending || active<0)return;
+
+ const m=missions[active];
+
+ const value=normalize($("answer").value);
+
+ if(!value){
+  $("feedback").className="feedback red";
+  $("feedback").textContent="Entre une réponse.";
+  return;
+ }
+
+ state.attempts[active]=
+  (state.attempts[active]||0)+1;
+
+ const correct=m.answer.some(a=>
+  normalize(a)===value
+ );
+
+ if(correct){
+
+  pending=true;
+
+  completeCurrentMission();
+
+  $("feedback").className="feedback green";
+
+  $("feedback").textContent=
+   "✓ "+m.success;
+
+  $("answer").disabled=true;
+
+  $("inputArea").classList.add("hidden");
+
+  $("continue").classList.remove("hidden");
+
+  $("story").textContent+=
+   "\n\n"+m.reward;
+
+  save();
+  updateStats();
+
+ }else{
+
+  state.time=clamp(state.time-5,0,100);
+  state.trust=clamp(state.trust-3,0,100);
+
+  $("feedback").className="feedback red";
+
+  $("feedback").textContent=
+   "✕ Mauvaise réponse. Tu perds 5 points de temps et 3 de confiance.";
+
+  save();
+  updateStats();
+
+ }
+
+}
+
+
+/* =========================
+   VALIDATION D'UN DOSSIER
+========================= */
+
+function completeCurrentMission(){
+
+ if(active<0)return;
+
+ if(!state.completed.includes(active)){
+  state.completed.push(active);
+ }
+
+ state.completed.sort((a,b)=>a-b);
+
+ save();
+ updateStats();
+
+}
+
+
+/* =========================
+   INDICES
+========================= */
+
+function hint(){
+
+ if(active<0)return;
+
+ const m=missions[active];
+
+ const count=state.hints[active]||0;
+
+ if(count>=m.hints.length){
+
+  $("hintBox").classList.remove("hidden");
+
+  $("hintBox").textContent=
+   "Tu as utilisé tous les indices disponibles.";
+
+  return;
+ }
+
+ state.hints[active]=count+1;
+
+ state.time=clamp(state.time-8,0,100);
+
+ $("hintBox").classList.remove("hidden");
+
+ $("hintBox").textContent=
+  "INDICE "+(count+1)+" : "+m.hints[count];
+
+ $("feedback").className="feedback red";
+
+ $("feedback").textContent=
+  "Un indice te coûte 8 points de temps.";
+
+ save();
+ updateStats();
+
+}
+
+
+/* =========================
+   RETOUR À LA CARTE
+========================= */
+
+function backToMap(){
+
+ if(pending){
+  drawMap();
+  return;
+ }
+
+ if(confirm("Quitter ce dossier ? Ta progression est conservée.")){
+  drawMap();
+ }
+
+}
+
+
+/* =========================
+   SUITE DU JEU
+========================= */
+
+function finishMission(){
+
+ if(!pending)return;
+
+ if(active===4){
+  endGame();
+  return;
+ }
+
+ drawMap();
+
+}
+
+
+/* =========================
+   STATISTIQUES
+========================= */
+
+function updateStats(){
+
+ $("time").textContent=state.time;
+ $("trust").textContent=state.trust;
+ $("clues").textContent=state.clues;
+
+ $("time").className=
+  state.time<25?"red":"purple";
+
+ $("trust").className=
+  state.trust<25?"red":"green";
+
+ $("clues").className="purple";
+
+ $("bar").style.width=
+  (state.completed.length/5*100)+"%";
+
+}
+
+
+/* =========================
+   FIN DE L'ENQUÊTE
+========================= */
+
+function endGame(){
+
+ state.finished=true;
+
+ save();
+
  show("ending");
- $("endSubtitle").textContent="ENQUÊTE TERMINÉE";
- $("endStory").textContent="Tu as déjà terminé cette enquête. Recommence pour tenter un autre parcours.";
+
+ let title="TU AS RÉUSSI.";
+
+ let text=
+ "Tu as retrouvé la montre DESTINY. Mais ton parcours a été marqué par tes décisions. Chaque choix a ouvert une porte et en a fermé une autre. La montre symbolise cette idée : tu ne peux pas contrôler toutes les conséquences, mais tu peux choisir d'avancer.";
+
+ if(state.trust<25){
+  title="LA VÉRITÉ A UN PRIX.";
+  text+=" Tu as perdu la confiance de plusieurs personnes au cours de ton enquête.";
+ }
+
+ if(state.time===0){
+  title="LE TEMPS EST ÉCOULÉ.";
+  text+=" Tu as terminé l'enquête, mais tu as perdu tout ton temps disponible.";
+ }
+
+ if(state.time>=70 && state.trust>=60){
+  title="UN PARCOURS EXCEPTIONNEL.";
+  text+=" Tu as su faire preuve de réflexion et de discernement.";
+ }
+
+ $("endSubtitle").textContent=title;
+ $("endStory").textContent=text;
+
  $("endTime").textContent=state.time;
  $("endTrust").textContent=state.trust;
  $("endClues").textContent=state.clues;
+
 }
-$("answer").addEventListener("keydown",e=>{
- if(e.key==="Enter")validate();
+
+
+/* =========================
+   INITIALISATION
+========================= */
+
+load();
+
+if(state.finished){
+
+ show("ending");
+
+ $("endSubtitle").textContent="ENQUÊTE TERMINÉE";
+
+ $("endStory").textContent=
+  "Tu as déjà terminé cette enquête. Recommence pour tenter un autre parcours.";
+
+ $("endTime").textContent=state.time;
+ $("endTrust").textContent=state.trust;
+ $("endClues").textContent=state.clues;
+
+}else if(state.completed.length>0){
+
+ $("resume").classList.remove("hidden");
+
+}
+
+$("answer").addEventListener("keydown",function(e){
+
+ if(e.key==="Enter"){
+  validate();
+ }
+
 });
+
 </script>
+
 </body>
 </html>
